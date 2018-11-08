@@ -20,13 +20,15 @@ export class FeedPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  public somaDoisNumeros(): void {
-    alert(5 + 10);
+  
+  public somaDoisNumeros(num1:number, num2:number): void {
+    //É sempre bom especificar o tipo que será recebido
+    alert(num1 + num2);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FeedPage');
-    this.somaDoisNumeros();
+    this.somaDoisNumeros(10, 99);
   }
 
 }
