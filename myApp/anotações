@@ -27,4 +27,4 @@
     No html da pag, adicionei um botão com o evento de click.
 
 
-    
+*Criei um objeto para utilizar para passar as informções para o html via código. Será de grande ajuda na hora de receber dados via api

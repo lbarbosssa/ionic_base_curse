@@ -14,6 +14,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'feed.html',
 })
 export class FeedPage {
+  public objeto_feed = {
+    titulo: "Lucas Barbosa",
+    data: "November 6, 1955",
+    descricao: "Estou criando um app",
+    qntd_likes: 12,
+    qnt_comments: 4,
+    time_comment: "11h ago"
+  }
+
   public nome_usuario:string = "Lucas Barbosa";
   //sem o public é padrão, o tipo de variavel é declardo para que a var receba apenas oque ela espera.
 
