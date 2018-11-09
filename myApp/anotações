@@ -28,3 +28,7 @@
 
 
 *Criei um objeto para utilizar para passar as informções para o html via código. Será de grande ajuda na hora de receber dados via api
+
+*Para começar usar uma web api devemos observar se o modulo de http está presente no app.module.ts
+
+*No provider moovie criamos a função para obter latest filmes.
