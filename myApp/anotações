@@ -9,7 +9,7 @@
 *Progrmando no ts, podemos interpolar conteudos de varaiveis no html com o uso de {{}} do angular;
 
 *Ao escrever uma função no ts, podemos utilizar parametros.
-    -se utilizarmos parametros na função o ideal é especificar o tipo;
+    se utilizarmos parametros na função o ideal é especificar o tipo;
 
 *Adicionando imagens, ou icones na pasta assets, os arquivos são replicados para a pasta www;
 
@@ -17,3 +17,14 @@
 
 *Dentro do app.module.ts temos o rootPage, que é a pagina que inicia ao abrir o app;
 
+*Uma coisa bem legal d eusar são os slides.
+    É legal da uma boa formatada neles, na pagina eu tirei o titulo para ficar full;
+    Deixei um padding para não dar a impressão de entrar na tela;
+
+*No primeiro slide, criei o link para minha tabs page.
+    No meu intro.ts eu criei uma função para ser chamada e levar a pagina desejada;
+    Foi necessario utilizar o nav controler e push para criar o link até a pag.
+    No html da pag, adicionei um botão com o evento de click.
+
+
+    
