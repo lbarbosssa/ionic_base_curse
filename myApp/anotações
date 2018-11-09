@@ -12,3 +12,6 @@
     -se utilizarmos parametros na função o ideal é especificar o tipo;
 
 *Adicionando imagens, ou icones na pasta assets, os arquivos são replicados para a pasta www;
+
+*Para adicionar estilos, podemos utiliza o scss da pagina, ou o app.scss quando o estilo for utilzado em todo app;
+
