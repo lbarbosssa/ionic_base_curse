@@ -1,0 +1,14 @@
+*Até agora eu gerei pagina com o comando: ionic generate page feed - feed é o nome;
+
+*Para exibir a pagina nas abas do meu app, precisei importar ela no app.module.ts na parte de imports.
+    No tabs.ts adicionei um link para usar no tabs.html;
+    No tabs.html, criei um novo ion-tab com o link do ts, um titulo e também um novo icone.
+
+*O conteudo das paginas são escritos nos htmls, e programado no ts;
+
+*Progrmando no ts, podemos interpolar conteudos de varaiveis no html com o uso de {{}} do angular;
+
+*Ao escrever uma função no ts, podemos utilizar parametros.
+    -se utilizarmos parametros na função o ideal é especificar o tipo;
+
+*Adicionando imagens, ou icones na pasta assets, os arquivos são replicados para a pasta www;
