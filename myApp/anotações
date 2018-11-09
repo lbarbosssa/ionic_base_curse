@@ -15,3 +15,5 @@
 
 *Para adicionar estilos, podemos utiliza o scss da pagina, ou o app.scss quando o estilo for utilzado em todo app;
 
+*Dentro do app.module.ts temos o rootPage, que é a pagina que inicia ao abrir o app;
+
