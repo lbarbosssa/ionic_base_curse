@@ -31,4 +31,12 @@
 
 *Para começar usar uma web api devemos observar se o modulo de http está presente no app.module.ts
 
-*No provider moovie criamos a função para obter latest filmes.
+*No provider moovie criamos a função para obter latest filmes;
+
+*Ainda no provider, criei a variavel com a base da utilizar;
+
+*Agora no nosso feed.ts.
+    Adicionei na seção de componets o provider criado;
+    No construtor criei uma variavel para o provider;
+    Realizei a chamada da função e o utilizei o subscribe;
+    dentro do subscribe podemos usar o data e o error

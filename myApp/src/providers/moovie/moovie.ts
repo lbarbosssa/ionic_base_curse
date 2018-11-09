@@ -10,13 +10,13 @@ import { Observable } from 'rxjs/Observable';
 */
 @Injectable()
 export class MoovieProvider {
-
+  private baseApiPath = "https://api.themoviedb.org/3";
   constructor(public http: HttpClient) {
     console.log('Hello MoovieProvider Provider');
   }
 
-  getLatesteMovvies() {
-    return this.http.get("https://......");
+  getLatesteMovies() {
+    return this.http.get(this.baseApiPath+"/movie/latest");
   }
 
 }
