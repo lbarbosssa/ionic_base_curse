@@ -40,3 +40,4 @@
     No construtor criei uma variavel para o provider;
     Realizei a chamada da função e o utilizei o subscribe;
     dentro do subscribe podemos usar o data e o error
+

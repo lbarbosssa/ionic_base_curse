@@ -16,7 +16,11 @@ export class MoovieProvider {
   }
 
   getLatesteMovies() {
-    return this.http.get(this.baseApiPath+"/movie/latest");
+    return this.http.get(this.baseApiPath + "/movie/latest?api_key=" + this.getApiKey());
+  }
+
+  getApiKey(): string{
+    return "7e5cac9f8cea0bb43e4dd1aca147b93f";
   }
 
 }
