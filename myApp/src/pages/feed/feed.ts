@@ -27,6 +27,8 @@ export class FeedPage {
     time_comment: "11h ago"
   }
 
+  public lista_filmes = new Array<any>();
+
   public nome_usuario:string = "Lucas Barbosa";
   //sem o public é padrão, o tipo de variavel é declardo para que a var receba apenas oque ela espera.
 
@@ -44,8 +46,10 @@ export class FeedPage {
   }
 
   ionViewDidLoad() {
-    this.movieProvider.getLatesteMovies().subscribe(
+    this.movieProvider.getPopularMovies().subscribe(
       data => {
+        const response = (data as any);
+        this.lista_filmes = response.results;
         console.log(data);
       }, error => {
         console.log(error);
