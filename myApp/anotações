@@ -47,12 +47,22 @@
     Utilizei também [src] do angular que permite adiconar endereço com http;
 
 *Para rodar no emulador de android.
-    É necessário instalar o Android studio
-    Dentro do android studio precisa instalar o google play services
-    Configurar um dispositivo virtual
-    Instalar o Java SDK
-    Adiconar a variavel de ambiente JAVA_HOME
-    Instalar o Gradle
-    Adicionar a plataforma com o comando: ionic cordova plataform add android
-    da play no dispositivo virtual no android studio
-    ionic cordova run android --emulator
+    É necessário instalar o Android studio;
+    Dentro do android studio precisa instalar o google play services;
+    Configurar um dispositivo virtual;
+    Instalar o Java SDK;
+    Adiconar a variavel de ambiente JAVA_HOME;
+    Instalar o Gradle;
+    Adicionar a plataforma com o comando: ionic cordova platform add android;
+    da play no dispositivo virtual no android studio;
+    ionic cordova run android --emulator;
+
+*Para rodar no emulador de IOS.
+    Adicionar a plataforma no projeto: ionic cordova platform add ios;
+    Instalar o Xcode;
+    Abrir a a pasta ios no finder;
+    abrir o xcodeproj ou xcodeworkspace no Xcode;
+    escolher o disipositivo na parte superior e da play;
+    
+
+    
