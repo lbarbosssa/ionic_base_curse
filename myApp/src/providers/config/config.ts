@@ -15,7 +15,7 @@ export class ConfigProvider {
 
   
   getConfigData(): any{
-    return localStorage.getItem(config_key_name)
+    return localStorage.getItem(config_key_name);
   }
 
   setConfigData(showSlide?: boolean, name?: string, username?: string){

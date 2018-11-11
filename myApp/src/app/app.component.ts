@@ -13,9 +13,9 @@ import { ConfigProvider } from '../providers/config/config';
     ConfigProvider
   ]
   })
-  
+
 export class MyApp {
-  rootPage:any = IntroPage;
+  rootPage:any;
 
   constructor(
     platform: Platform, 
@@ -27,7 +27,13 @@ export class MyApp {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
 
-      let config = configProvider.getConfigData;
+      let config = configProvider.getConfigData();
+      if(config == null){
+        this.rootPage = IntroPage;
+        configProvider.setConfigData(false);
+      }else{
+        this.rootPage = TabsPage;
+      }
       console.log(config);
 
       statusBar.styleDefault();
