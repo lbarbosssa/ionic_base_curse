@@ -67,5 +67,14 @@
 
 *Localstorage substituto dos cookies;
 
+*Menu na pagina de configurações.
+    Criar as paginas necessárias (que vão aparecer no menu);
+    Criar uma pagina para aparecer em tabs;
+    Não esquecer de colocar todas no app.module.ts;
+    No conteudo da pagina de configurações, é necessario um rootPage, que tem qu ser confugarado dentro do ts desta pagina;
+    O codigo html do menu, é onde devemos chamar as paginas, o correto é criar uma função para isso;
+        
+
+
 
     
