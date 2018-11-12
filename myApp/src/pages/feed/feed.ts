@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { MoovieProvider } from "../../providers/moovie/moovie";
+import { flatten } from '@angular/compiler';
 
 
 @IonicPage()
@@ -23,6 +24,8 @@ export class FeedPage {
 
   public lista_filmes = new Array<any>();
   public loader;
+  public refresher;
+  public isRefreshing: boolean = false;
 
   public nome_usuario:string = "Lucas Barbosa";
   //sem o public é padrão, o tipo de variavel é declardo para que a var receba apenas oque ela espera.
@@ -52,9 +55,18 @@ export class FeedPage {
     alert(num1 + num2);
   }
 
+  doRefresh(refresher) {
+    this.refresher = refresher;
+    this.isRefreshing = true;
 
+    this.carregarFilmes();
+  }
 
   ionViewDidEnter() {
+    this.carregarFilmes();
+  }
+
+  carregarFilmes(){
     this.abrirCarregando();
     this.movieProvider.getPopularMovies().subscribe(
       data => {
@@ -62,12 +74,20 @@ export class FeedPage {
         this.lista_filmes = response.results;
         console.log(data);
         this.fecharCarregando();
+       
+        if(this.isRefreshing){
+          this.refresher.complete();
+          this.isRefreshing = false;
+        }
       }, error => {
         console.log(error);
         this.fecharCarregando();
+        if(this.isRefreshing){
+          this.refresher.complete();
+          this.isRefreshing = false;
+        }
       }
     )
-
   }
 
 }
