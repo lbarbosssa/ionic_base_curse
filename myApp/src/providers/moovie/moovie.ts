@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
 export class MoovieProvider {
   private baseApiPath = "https://api.themoviedb.org/3";
   constructor(public http: HttpClient) {
-    console.log('Hello MoovieProvider Provider');
+    //console.log('Hello MoovieProvider Provider');
   }
 
   getLatestMovies() {
@@ -21,6 +21,10 @@ export class MoovieProvider {
 
   getPopularMovies() {
     return this.http.get(this.baseApiPath + "/movie/popular?api_key=" + this.getApiKey());
+  }
+
+  getMovieDeatils(filmeid) {
+    return this.http.get(this.baseApiPath + `/movie/${filmeid}?api_key=` + this.getApiKey());
   }
 
   getApiKey(): string{
