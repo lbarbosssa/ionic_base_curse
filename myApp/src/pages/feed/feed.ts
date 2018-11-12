@@ -26,16 +26,18 @@ export class FeedPage {
   public loader;
   public refresher;
   public isRefreshing: boolean = false;
+  public infiniteScroll;
+  public page = 1;
 
-  public nome_usuario:string = "Lucas Barbosa";
+  public nome_usuario: string = "Lucas Barbosa";
   //sem o public é padrão, o tipo de variavel é declardo para que a var receba apenas oque ela espera.
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private movieProvider: MoovieProvider,
-    public loadingCtrl: LoadingController 
-    ) {
+    public loadingCtrl: LoadingController
+  ) {
   }
 
 
@@ -46,11 +48,11 @@ export class FeedPage {
     this.loader.present();
   }
 
-  fecharCarregando(){
+  fecharCarregando() {
     this.loader.dismiss();
   }
-  
-  public somaDoisNumeros(num1:number, num2:number): void {
+
+  public somaDoisNumeros(num1: number, num2: number): void {
     //É sempre bom especificar o tipo que será recebido
     alert(num1 + num2);
   }
@@ -66,28 +68,41 @@ export class FeedPage {
     this.carregarFilmes();
   }
 
-  abrirDetalhes(filme){
+  abrirDetalhes(filme) {
     console.log(filme);
-    this.navCtrl.push(FilmedetalhesPage, {id: filme.id});
+    this.navCtrl.push(FilmedetalhesPage, { id: filme.id });
   }
 
-  carregarFilmes(){
+  doInfinite(infiniteScroll) {
+    this.page++;
+    this.infiniteScroll = infiniteScroll;
+    this.carregarFilmes(true);
+  }
+
+  carregarFilmes(newpage: boolean = false) {
+
     this.abrirCarregando();
-    this.movieProvider.getPopularMovies().subscribe(
+    this.movieProvider.getPopularMovies(this.page).subscribe(
       data => {
         const response = (data as any);
+
+        if(newpage){
+          this.lista_filmes = this.lista_filmes.concat(response.results);
+          this.infiniteScroll.complete();
+        }else{
         this.lista_filmes = response.results;
-        console.log(data);
+        }
+
         this.fecharCarregando();
-       
-        if(this.isRefreshing){
+
+        if (this.isRefreshing) {
           this.refresher.complete();
           this.isRefreshing = false;
         }
       }, error => {
         console.log(error);
         this.fecharCarregando();
-        if(this.isRefreshing){
+        if (this.isRefreshing) {
           this.refresher.complete();
           this.isRefreshing = false;
         }
@@ -95,4 +110,7 @@ export class FeedPage {
     )
   }
 
+
 }
+
+
