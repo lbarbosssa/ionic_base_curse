@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { MoovieProvider } from "../../providers/moovie/moovie";
 
-/**
- * Generated class for the FeedPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -28,6 +22,7 @@ export class FeedPage {
   }
 
   public lista_filmes = new Array<any>();
+  public loader;
 
   public nome_usuario:string = "Lucas Barbosa";
   //sem o public é padrão, o tipo de variavel é declardo para que a var receba apenas oque ela espera.
@@ -35,24 +30,41 @@ export class FeedPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    private movieProvider: MoovieProvider 
+    private movieProvider: MoovieProvider,
+    public loadingCtrl: LoadingController 
     ) {
   }
 
+
+  abrirCarregando() {
+    this.loader = this.loadingCtrl.create({
+      content: "Carregando ...",
+    });
+    this.loader.present();
+  }
+
+  fecharCarregando(){
+    this.loader.dismiss();
+  }
   
   public somaDoisNumeros(num1:number, num2:number): void {
     //É sempre bom especificar o tipo que será recebido
     alert(num1 + num2);
   }
 
-  ionViewDidLoad() {
+
+
+  ionViewDidEnter() {
+    this.abrirCarregando();
     this.movieProvider.getPopularMovies().subscribe(
       data => {
         const response = (data as any);
         this.lista_filmes = response.results;
         console.log(data);
+        this.fecharCarregando();
       }, error => {
         console.log(error);
+        this.fecharCarregando();
       }
     )
 
