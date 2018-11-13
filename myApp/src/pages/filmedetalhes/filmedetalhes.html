@@ -21,7 +21,7 @@
           </ion-avatar>-->
           <h2 class="feed_title">{{ filme.original_title }}</h2>
           <!-- {{}} = Interpolção de conteudo no angular, dentro da chave colocamos o conteudo! -->
-          <p class="feed_date">{{ filme.release_date }}</p>
+          <p class="feed_date">{{ filme.release_date | date:"dd/MM/yy" }}</p>
         </ion-item>
     
         <img [src]="'https://image.tmdb.org/t/p/w500/' + filme.backdrop_path">
@@ -29,7 +29,20 @@
         <ion-card-content>
           <p>{{ filme.overview }}</p>
         </ion-card-content>
-    
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="star"></ion-icon>
+              <div>{{ filme.popularity }}</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="cash"></ion-icon>
+              <div>{{ filme.budget | currency}}</div>
+            </button>
+          </ion-col>
+        </ion-row>
       
     
       </ion-card>

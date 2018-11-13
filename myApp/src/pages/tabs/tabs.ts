@@ -6,7 +6,8 @@ import { ConfiguracoesPage } from '../configuracoes/configuracoes';
 import { OpencamPage } from '../opencam/opencam';
 
 @Component({
-  templateUrl: 'tabs.html'
+  templateUrl: 'tabs.html',
+  selector: 'tabs-page',
 })
 export class TabsPage {
 

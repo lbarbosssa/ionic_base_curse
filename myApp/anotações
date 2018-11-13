@@ -17,7 +17,7 @@
 
 *Dentro do app.module.ts temos o rootPage, que é a pagina que inicia ao abrir o app;
 
-*Uma coisa bem legal d eusar são os slides.
+*Uma coisa bem legal de usar são os slides.
     É legal da uma boa formatada neles, na pagina eu tirei o titulo para ficar full;
     Deixei um padding para não dar a impressão de entrar na tela;
 
