@@ -74,6 +74,14 @@
     No conteudo da pagina de configurações, é necessario um rootPage, que tem qu ser confugarado dentro do ts desta pagina;
     O codigo html do menu, é onde devemos chamar as paginas, o correto é criar uma função para isso;
         
+*Utilizando Plugin nativo (Camera).
+    Sempre verificar na documentação;
+    Adicionar o Provider, import e o construct na pagina;
+    Criar uma função para abrigar o codigo da documentação;
+    Botão para chamar a função;
+    
+
+
 
 
 

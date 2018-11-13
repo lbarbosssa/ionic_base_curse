@@ -20,6 +20,7 @@ import { ConfiguracoesPageModule } from '../pages/configuracoes/configuracoes.mo
 import { PerfilPageModule } from '../pages/perfil/perfil.module';
 import { SobrePageModule } from '../pages/sobre/sobre.module';
 import { FilmedetalhesPageModule } from '../pages/filmedetalhes/filmedetalhes.module';
+import { OpencamPageModule } from '../pages/opencam/opencam.module';
 
 
 
@@ -41,7 +42,8 @@ import { FilmedetalhesPageModule } from '../pages/filmedetalhes/filmedetalhes.mo
     ConfiguracoesPageModule,
     PerfilPageModule,
     SobrePageModule,
-    FilmedetalhesPageModule
+    FilmedetalhesPageModule,
+    OpencamPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
